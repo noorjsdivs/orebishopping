@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import Flex from "../../designLayouts/Flex";
+import { Link } from "react-router-dom";
 
 const HeaderBottom = () => {
   const [show, setShow] = useState(false);
@@ -81,9 +82,11 @@ const HeaderBottom = () => {
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
                   Login
                 </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Sign Up
-                </li>
+                <Link onClick={() => setShowUser(false)} to="/signup">
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Sign Up
+                  </li>
+                </Link>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
                   Profile
                 </li>
@@ -92,9 +95,11 @@ const HeaderBottom = () => {
                 </li>
               </motion.ul>
             )}
-            <div>
-              <FaShoppingCart />
-            </div>
+            <Link to="/cart">
+              <div>
+                <FaShoppingCart />
+              </div>
+            </Link>
           </div>
         </Flex>
       </div>
