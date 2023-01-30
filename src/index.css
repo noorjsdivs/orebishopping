@@ -8,6 +8,9 @@
   .hoverEffect {
     @apply duration-300 cursor-pointer;
   }
+  .headerSedenavLi {
+    @apply hover:underline underline-offset-2 cursor-pointer text-gray-300 hover:text-white;
+  }
 }
 
 /* ============= NavLink active Start here ============== */

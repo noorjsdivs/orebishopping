@@ -4,8 +4,10 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import Flex from "../../designLayouts/Flex";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const HeaderBottom = () => {
+  const products = useSelector((state) => state.orebiReducer.products);
   const [show, setShow] = useState(false);
   const [showUser, setShowUser] = useState(false);
   const ref = useRef();
@@ -79,9 +81,11 @@ const HeaderBottom = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
               >
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Login
-                </li>
+                <Link to="/signin">
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Login
+                  </li>
+                </Link>
                 <Link onClick={() => setShowUser(false)} to="/signup">
                   <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
                     Sign Up
@@ -96,8 +100,11 @@ const HeaderBottom = () => {
               </motion.ul>
             )}
             <Link to="/cart">
-              <div>
+              <div className="relative">
                 <FaShoppingCart />
+                <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
+                  {products.length > 0 ? products.length : 0}
+                </span>
               </div>
             </Link>
           </div>
