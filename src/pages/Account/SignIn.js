@@ -179,7 +179,7 @@ const SignIn = () => {
                   onClick={handleSignUp}
                   className="bg-primeColor hover:bg-black text-gray-200 hover:text-white cursor-pointer w-full text-base font-medium h-10 rounded-md  duration-300"
                 >
-                  Create Account
+                  Sign In
                 </button>
                 <p className="text-sm text-center font-titleFont font-medium">
                   Don't have an Account?{" "}

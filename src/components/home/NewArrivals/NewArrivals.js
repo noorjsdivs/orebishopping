@@ -52,6 +52,7 @@ const NewArrivals = () => {
       <Slider {...settings}>
         <div className="px-2">
           <Product
+            _id="100001"
             img={newArrOne}
             productName="Round Table Clock"
             price="44.00"
@@ -62,6 +63,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
+            _id="100002"
             img={newArrTwo}
             productName="Smart Watch"
             price="250.00"
@@ -72,6 +74,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
+            _id="100003"
             img={newArrThree}
             productName="cloth Basket"
             price="80.00"
@@ -82,6 +85,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
+            _id="100004"
             img={newArrFour}
             productName="Funny toys for babies"
             price="60.00"
@@ -92,6 +96,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
+            _id="100005"
             img={newArrTwo}
             productName="Funny toys for babies"
             price="60.00"

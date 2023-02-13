@@ -11,7 +11,7 @@ function Items({ currentItems }) {
         currentItems.map((item) => (
           <div key={item._id} className="w-full">
             <Product
-              id={item._id}
+              _id={item._id}
               img={item.img}
               productName={item.productName}
               price={item.price}

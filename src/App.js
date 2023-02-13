@@ -19,6 +19,7 @@ import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
+import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
 
@@ -49,6 +50,7 @@ const router = createBrowserRouter(
         <Route path="/offer" element={<Offer />}></Route>
         <Route path="/product/:_id" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/paymentgateway" element={<Payment />}></Route>
       </Route>
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>

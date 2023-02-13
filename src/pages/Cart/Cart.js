@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
@@ -8,6 +8,25 @@ import ItemCard from "./ItemCard";
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.orebiReducer.products);
+  const [totalAmt, setTotalAmt] = useState("");
+  const [shippingCharge, setShippingCharge] = useState("");
+  useEffect(() => {
+    let price = 0;
+    products.map((item) => {
+      price += item.price * item.quantity;
+      return price;
+    });
+    setTotalAmt(price);
+  }, [products]);
+  useEffect(() => {
+    if (totalAmt <= 200) {
+      setShippingCharge(30);
+    } else if (totalAmt <= 400) {
+      setShippingCharge(25);
+    } else if (totalAmt > 401) {
+      setShippingCharge(20);
+    }
+  }, [totalAmt]);
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Cart" />
@@ -50,22 +69,30 @@ const Cart = () => {
               <h1 className="text-2xl font-semibold text-right">Cart totals</h1>
               <div>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
-                  Subtotal{" "}
+                  Subtotal
                   <span className="font-semibold tracking-wide font-titleFont">
-                    $500
+                    ${totalAmt}
+                  </span>
+                </p>
+                <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
+                  Shipping Charge
+                  <span className="font-semibold tracking-wide font-titleFont">
+                    ${shippingCharge}
                   </span>
                 </p>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 py-1.5 text-lg px-4 font-medium">
-                  Total{" "}
+                  Total
                   <span className="font-bold tracking-wide text-lg font-titleFont">
-                    $1000
+                    ${totalAmt + shippingCharge}
                   </span>
                 </p>
               </div>
               <div className="flex justify-end">
-                <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
-                  Proceed to Checkout
-                </button>
+                <Link to="/paymentgateway">
+                  <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
+                    Proceed to Checkout
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

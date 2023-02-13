@@ -1,6 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../redux/orebiSlice";
 
 const ProductInfo = ({ productInfo }) => {
+  const dispatch = useDispatch();
+  console.log(productInfo);
   return (
     <div className="flex flex-col gap-5">
       <h2 className="text-4xl font-semibold">{productInfo.productName}</h2>
@@ -10,16 +14,22 @@ const ProductInfo = ({ productInfo }) => {
       <p className="font-medium text-lg">
         <span className="font-normal">Colors:</span> {productInfo.color}
       </p>
-      <p className="w-full h-14 flex items-center justify-between bg-white">
-        <span className="w-14 h-full text-2xl flex items-center justify-center hover:bg-gray-200 duration-300 cursor-pointer">
-          -
-        </span>
-        1
-        <span className="w-14 h-full text-2xl flex items-center justify-center hover:bg-gray-200 duration-300 cursor-pointer">
-          +
-        </span>
-      </p>
-      <button className="w-full py-4 bg-primeColor hover:bg-black duration-300 text-white text-lg font-titleFont">
+      <button
+        onClick={() =>
+          dispatch(
+            addToCart({
+              _id: productInfo.id,
+              name: productInfo.productName,
+              quantity: 1,
+              image: productInfo.img,
+              badge: productInfo.badge,
+              price: productInfo.price,
+              colors: productInfo.color,
+            })
+          )
+        }
+        className="w-full py-4 bg-primeColor hover:bg-black duration-300 text-white text-lg font-titleFont"
+      >
         Add to Cart
       </button>
       <p className="font-normal text-sm">

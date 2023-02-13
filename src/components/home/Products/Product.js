@@ -47,7 +47,7 @@ const Product = (props) => {
               onClick={() =>
                 dispatch(
                   addToCart({
-                    _id: props.id,
+                    _id: props._id,
                     name: props.productName,
                     quantity: 1,
                     image: props.img,
