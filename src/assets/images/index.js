@@ -29,6 +29,7 @@ import spfFour from "./products/specialOffer/spfFour.webp";
 import productOfTheYear from "./products/productOfTheYear.webp";
 // ============== Products End here ======================
 import paymentCard from "./payment.png";
+import emptyCart from "../images/emptyCart.png";
 
 export {
   logo,
@@ -62,4 +63,5 @@ export {
   productOfTheYear,
   // ===================== Products End here ==============
   paymentCard,
+  emptyCart,
 };

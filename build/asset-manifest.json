@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ef13128c.css",
-    "main.js": "/static/js/main.7889d053.js",
+    "main.css": "/static/css/main.6e604b4f.css",
+    "main.js": "/static/js/main.4058ce3d.js",
     "static/media/bannerImgTwo.webp": "/static/media/bannerImgTwo.d93152138c5c9da3de58.webp",
     "static/media/bannerImgThree.webp": "/static/media/bannerImgThree.cdd63ff84acf53a73a0d.webp",
     "static/media/saleImgTwo.webp": "/static/media/saleImgTwo.ecb733524e878406c281.webp",
@@ -16,6 +16,7 @@
     "static/media/bestSellerTwo.webp": "/static/media/bestSellerTwo.c2641a76c189fcc71670.webp",
     "static/media/bestSellerFour.webp": "/static/media/bestSellerFour.0b34fdc5232f2dcf997b.webp",
     "static/media/bestSellerOne.webp": "/static/media/bestSellerOne.988208d74cc332fccc11.webp",
+    "static/media/emptyCart.png": "/static/media/emptyCart.230e4848b62fb3cab325.png",
     "static/media/spfThree.webp": "/static/media/spfThree.226da6ea085a91db0352.webp",
     "static/media/spfOne.webp": "/static/media/spfOne.af2c5aa8d8015ffcccf4.webp",
     "static/media/spfTwo.webp": "/static/media/spfTwo.3dd358b9c31a7587b4d9.webp",
@@ -23,11 +24,11 @@
     "static/media/newArrTwo.webp": "/static/media/newArrTwo.bdc7d9372116bdf40cc4.webp",
     "static/media/newArrOne.webp": "/static/media/newArrOne.5982a995e5c312914fe6.webp",
     "index.html": "/index.html",
-    "main.ef13128c.css.map": "/static/css/main.ef13128c.css.map",
-    "main.7889d053.js.map": "/static/js/main.7889d053.js.map"
+    "main.6e604b4f.css.map": "/static/css/main.6e604b4f.css.map",
+    "main.4058ce3d.js.map": "/static/js/main.4058ce3d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef13128c.css",
-    "static/js/main.7889d053.js"
+    "static/css/main.6e604b4f.css",
+    "static/js/main.4058ce3d.js"
   ]
 }
