@@ -28,4 +28,7 @@ nav .active li {
   }
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 /* ============= NavLink active End here ================ */

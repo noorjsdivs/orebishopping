@@ -4,7 +4,6 @@ import { addToCart } from "../../../redux/orebiSlice";
 
 const ProductInfo = ({ productInfo }) => {
   const dispatch = useDispatch();
-  console.log(productInfo);
   return (
     <div className="flex flex-col gap-5">
       <h2 className="text-4xl font-semibold">{productInfo.productName}</h2>
