@@ -18,6 +18,7 @@ module.exports = {
       },
       fontFamily: {
         bodyFont: ["DM Sans", "sans-serif"],
+        
         titleFont: ["Poppins", "sans-serif"],
       },
       colors: {
