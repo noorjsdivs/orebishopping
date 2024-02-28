@@ -24,6 +24,13 @@ module.exports = {
       colors: {
         primeColor: "#262626",
         lightText: "#6D6D6D",
+        costumRGB:'rgb(224,145,50)',
+        costumRGB:'rgb(255,239,205)',
+        costumRGB:'rgb(165,142,116)',
+        costumRGB:'rgb(66,69,48)',
+        
+
+
       },
       boxShadow: {
         testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",

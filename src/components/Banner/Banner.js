@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import {
-  bannerImgOne,
-  bannerImgTwo,
-  bannerImgThree,
+  banner1,
+  banner2,
+  banner3,
 } from "../../assets/images";
 import Image from "../designLayouts/Image";
 
@@ -39,7 +39,7 @@ const Banner = () => {
             ? {
                 width: "30px",
                 color: "#262626",
-                borderRight: "3px #262626 solid",
+                borderRight: "5px #262626 solid",
                 padding: "8px 0",
                 cursor: "pointer",
               }
@@ -104,17 +104,17 @@ const Banner = () => {
       <Slider {...settings}>
         <Link to="/offer">
           <div>
-            <Image imgSrc={bannerImgOne} />
+            <Image imgSrc={banner1} />
           </div>
         </Link>
         <Link to="/offer">
           <div>
-            <Image imgSrc={bannerImgTwo} />
+            <Image imgSrc={banner2} />
           </div>
         </Link>
         <Link to="/offer">
           <div>
-            <Image imgSrc={bannerImgThree} />
+            <Image imgSrc={banner3} />
           </div>
         </Link>
       </Slider>
