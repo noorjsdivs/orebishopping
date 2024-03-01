@@ -10,8 +10,10 @@ import ItemCard from "./ItemCard";
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.orebiReducer.products);
+  
   const [totalAmt, setTotalAmt] = useState("");
   const [shippingCharge, setShippingCharge] = useState("");
+
   useEffect(() => {
     let price = 0;
     products.map((item) => {
@@ -20,6 +22,7 @@ const Cart = () => {
     });
     setTotalAmt(price);
   }, [products]);
+
   useEffect(() => {
     if (totalAmt <= 200) {
       setShippingCharge(30);
@@ -29,6 +32,7 @@ const Cart = () => {
       setShippingCharge(20);
     }
   }, [totalAmt]);
+
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Cart" />

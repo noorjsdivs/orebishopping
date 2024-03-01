@@ -12,13 +12,16 @@ import { addToCart } from "../../../redux/orebiSlice";
 const Product = (props) => {
   const dispatch = useDispatch();
   const _id = props.productName;
+
   const idString = (_id) => {
     return String(_id).toLowerCase().split(" ").join("");
   };
+
   const rootId = idString(_id);
 
   const navigate = useNavigate();
   const productItem = props;
+
   const handleProductDetails = () => {
     navigate(`/product/${rootId}`, {
       state: {
@@ -26,8 +29,9 @@ const Product = (props) => {
       },
     });
   };
+  
   return (
-    <div className="w-full relative group">
+    <div className="w-full relative group bg-orange-300	">
       <div className="max-w-80 max-h-80 relative overflow-y-hidden ">
         <div>
           <Image className="w-full h-full" imgSrc={props.img} />
