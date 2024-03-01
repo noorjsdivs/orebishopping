@@ -107,9 +107,9 @@ const Header = () => {
                           className="text-sm flex flex-col gap-1"
                         >
                           <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
+                          <li className="headerSedenavLi">Special Offers</li>
+                          <li className="headerSedenavLi">Cosmetics</li>
+                          <li className="headerSedenavLi">Skin-Care</li>
                           <li className="headerSedenavLi">Others</li>
                         </motion.ul>
                       )}
@@ -130,9 +130,9 @@ const Header = () => {
                           className="text-sm flex flex-col gap-1"
                         >
                           <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
+                          <li className="headerSedenavLi">Special Offers</li>
+                          <li className="headerSedenavLi">Cosmetics</li>
+                          <li className="headerSedenavLi">Skin-Care</li>
                           <li className="headerSedenavLi">Others</li>
                         </motion.ul>
                       )}

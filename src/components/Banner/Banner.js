@@ -13,7 +13,7 @@ const Banner = () => {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -101,7 +101,7 @@ const Banner = () => {
   };
   return (
     <div className="w-full bg-white">
-      <Slider {...settings}>
+      <Slider {...settings} style={{height: '390px'}}>
         <Link to="/offer">
           <div>
             <Image imgSrc={banner1} />
