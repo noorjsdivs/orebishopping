@@ -1,31 +1,39 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import NavTitle from "./NavTitle";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleBrand } from "../../../../redux/orebiSlice";
 
 const Brand = () => {
   const [showBrands, setShowBrands] = useState(true);
+  const checkedBrands = useSelector(
+    (state) => state.orebiReducer.checkedBrands
+  );
+  const dispatch = useDispatch();
+
   const brands = [
     {
-      _id: 9006,
-      title: "Apple",
+      _id: 900,
+      title: "Pantum",
     },
     {
-      _id: 9007,
-      title: "Ultron",
+      _id: 901,
+      title: "Hp",
     },
     {
-      _id: 9008,
-      title: "Unknown",
+      _id: 902,
+      title: "Epson",
     },
+
     {
-      _id: 9009,
-      title: "Shoppers Home",
-    },
-    {
-      _id: 9010,
-      title: "Hoichoi",
+      _id: 903,
+      title: "Ricoh",
     },
   ];
+
+  const handleToggleBrand = (brand) => {
+    dispatch(toggleBrand(brand));
+  };
 
   return (
     <div>
@@ -47,6 +55,12 @@ const Brand = () => {
                 key={item._id}
                 className="border-b-[1px] border-b-[#F0F0F0] pb-2 flex items-center gap-2 hover:text-primeColor hover:border-gray-400 duration-300"
               >
+                <input
+                  type="checkbox"
+                  id={item._id}
+                  checked={checkedBrands.some((b) => b._id === item._id)}
+                  onChange={() => handleToggleBrand(item)}
+                />
                 {item.title}
               </li>
             ))}

@@ -1,58 +1,76 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Product from "../../home/Products/Product";
+import { useSelector } from "react-redux";
 import { paginationItems } from "../../../constants";
 
 const items = paginationItems;
-function Items({ currentItems }) {
+
+function Items({ currentItems, selectedBrands, selectedCategories }) {
+  // Filter items based on selected brands and categories
+  const filteredItems = currentItems.filter((item) => {
+    const isBrandSelected =
+      selectedBrands.length === 0 ||
+      selectedBrands.some((brand) => brand.title === item.brand);
+
+    const isCategorySelected =
+      selectedCategories.length === 0 ||
+      selectedCategories.some((category) => category.title === item.cat);
+
+    return isBrandSelected && isCategorySelected;
+  });
+
   return (
     <>
-      {currentItems &&
-        currentItems.map((item) => (
-          <div key={item._id} className="w-full">
-            <Product
-              _id={item._id}
-              img={item.img}
-              productName={item.productName}
-              price={item.price}
-              color={item.color}
-              badge={item.badge}
-              des={item.des}
-            />
-          </div>
-        ))}
+      {filteredItems.map((item) => (
+        <div key={item._id} className="w-full">
+          <Product
+            _id={item._id}
+            img={item.img}
+            productName={item.productName}
+            price={item.price}
+            color={item.color}
+            badge={item.badge}
+            des={item.des}
+            pdf={item.pdf}
+            ficheTech={item.ficheTech}
+          />
+        </div>
+      ))}
     </>
   );
 }
 
 const Pagination = ({ itemsPerPage }) => {
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
   const [itemStart, setItemStart] = useState(1);
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
-  //   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = items.slice(itemOffset, endOffset);
+  const selectedBrands = useSelector(
+    (state) => state.orebiReducer.checkedBrands
+  );
+  const selectedCategories = useSelector(
+    (state) => state.orebiReducer.checkedCategorys
+  );
   const pageCount = Math.ceil(items.length / itemsPerPage);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
+    const newStart = newOffset + 1; // Adjust the start index
+
     setItemOffset(newOffset);
-    // console.log(
-    //   `User requested page number ${event.selected}, which is offset ${newOffset},`
-    // );
-    setItemStart(newOffset);
+    setItemStart(newStart);
   };
 
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mdl:gap-4 lg:gap-10">
-        <Items currentItems={currentItems} />
+        <Items
+          currentItems={currentItems}
+          selectedBrands={selectedBrands}
+          selectedCategories={selectedCategories}
+        />{" "}
       </div>
       <div className="flex flex-col mdl:flex-row justify-center mdl:justify-between items-center">
         <ReactPaginate
@@ -69,9 +87,10 @@ const Pagination = ({ itemsPerPage }) => {
         />
 
         <p className="text-base font-normal text-lightText">
-          Products from {itemStart === 0 ? 1 : itemStart} to {endOffset} of{" "}
+          Products from {itemStart} to {Math.min(endOffset, items.length)} of{" "}
           {items.length}
         </p>
+        <button onClick={() => console.log(selectedBrands)}> test</button>
       </div>
     </div>
   );
