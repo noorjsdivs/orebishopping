@@ -34,8 +34,7 @@ const Footer = () => {
           <FooterListTitle title=" More about Orebi Shop" />
           <div className="flex flex-col gap-6">
             <p className="text-base w-full xl:w-[80%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
-              ab ullam, numquam nesciunt in.
+              We are one of the worlds leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style.
             </p>
             <ul className="flex items-center gap-2">
               <a
