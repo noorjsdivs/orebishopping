@@ -6,6 +6,7 @@ import Flex from "../../designLayouts/Flex";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { paginationItems } from "../../../constants";
+import { BsSuitHeartFill } from "react-icons/bs";
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.orebiReducer.products);
@@ -57,24 +58,27 @@ const HeaderBottom = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute top-36 z-50 bg-primeColor w-auto text-[#767676] h-auto p-4 pb-6"
               >
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Accessories
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Furniture
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Electronics
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Clothes
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Bags
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Home appliances
-                </li>
+                <Link to={"category/imprimante"}>
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Imprimante
+                  </li>
+                </Link>
+
+                <Link to={"category/ancre"}>
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    ancre
+                  </li>
+                </Link>
+                <Link to={"category/Ruban"}>
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    ruban
+                  </li>
+                </Link>
+                <Link to={"category/Bac"}>
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Bac de dechet
+                  </li>
+                </Link>
               </motion.ul>
             )}
           </div>
@@ -117,7 +121,11 @@ const HeaderBottom = () => {
                         <p className="font-semibold text-lg">
                           {item.productName}
                         </p>
-                        <p className="text-xs">{item.des}</p>
+                        <p className="text-xs">
+                          {item.des.length > 100
+                            ? `${item.des.slice(0, 100)}...`
+                            : item.des}
+                        </p>
                         <p className="text-sm">
                           Price:{" "}
                           <span className="text-primeColor font-semibold">
@@ -168,6 +176,7 @@ const HeaderBottom = () => {
                 </span>
               </div>
             </Link>
+            <BsSuitHeartFill />
           </div>
         </Flex>
       </div>
