@@ -7,6 +7,7 @@ import { logo, logoLight } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
+import fmob from "../../../assets/images/fmob1.png";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
@@ -32,7 +33,7 @@ const Header = () => {
         <Flex className="flex items-center justify-between h-full">
           <Link to="/">
             <div>
-              <Image className="w-20 object-cover" imgSrc={logo} />
+              <Image className="w-20 object-cover" imgSrc={fmob} />
             </div>
           </Link>
           <div>

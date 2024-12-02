@@ -13,7 +13,7 @@ const Journal = () => {
       <Breadcrumbs title="Journals" prevLocation={prevLocation} />
       <div className="pb-10">
         <h1 className="max-w-[600px] text-base text-lightText mb-2">
-          <span className="text-primeColor font-semibold text-lg">Orebi</span>{" "}
+          <span className="text-primeColor font-semibold text-lg">FPT Shop</span>{" "}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
           reiciendis delectus vitae, aliquid sit iure dolorum commodi eum
           numquam voluptate!

@@ -10,9 +10,9 @@ const FooterBottom = () => {
             <AiOutlineCopyright />
           </span>
           Copyright 2022 | Orebi shopping | All Rights Reserved |
-          <a href="https://reactbd.com/" target="_blank" rel="noreferrer">
+          <a href="https://fptshop.com.vn/?gad_source=1&gclid=CjwKCAiAxqC6BhBcEiwAlXp45yqss8-EuSEfoxjWs-dVGMZUXucyziLedzGCJAMPqiOOx1K99Q3i1RoC_MAQAvD_BwE" target="_blank" rel="noreferrer">
             <span className="ml-1 font-medium group-hover:text-primeColor">
-              Powered by ReactBD.com
+              Powered by fptshop.com
             </span>
           </a>
         </p>

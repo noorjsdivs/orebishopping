@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import {
-  bannerImgOne,
-  bannerImgTwo,
-  bannerImgThree,
-} from "../../assets/images";
+import { bannerImgOne, bannerImgTwo, bannerImgThree } from "../../assets/images";
+import banner1 from "../../assets/images/banner/banner1.jpg";
+import banner5 from "../../assets/images/banner/banner5.jpg";
+import banner3 from "../../assets/images/banner/banner3.jpg";
 import Image from "../designLayouts/Image";
 
 const Banner = () => {
   const [dotActive, setDocActive] = useState(0);
+
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -29,7 +30,7 @@ const Banner = () => {
           transform: "translateY(-50%)",
         }}
       >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
+        <ul style={{ margin: "0px" }}>{dots}</ul>
       </div>
     ),
     customPaging: (i) => (
@@ -69,7 +70,7 @@ const Banner = () => {
                 transform: "translateY(-50%)",
               }}
             >
-              <ul style={{ margin: "0px" }}> {dots} </ul>
+              <ul style={{ margin: "0px" }}>{dots}</ul>
             </div>
           ),
           customPaging: (i) => (
@@ -99,22 +100,28 @@ const Banner = () => {
       },
     ],
   };
+
   return (
     <div className="w-full bg-white">
       <Slider {...settings}>
+        {/* Banner 1 */}
         <Link to="/offer">
-          <div>
-            <Image imgSrc={bannerImgOne} />
+          <div className="w-full h-[500px] overflow-hidden flex justify-center items-center">
+            <Image imgSrc={banner1} className="object-fill w-full h-full" />
           </div>
         </Link>
+
+        {/* Banner 2 */}
         <Link to="/offer">
-          <div>
-            <Image imgSrc={bannerImgTwo} />
+          <div className="w-full h-[500px] overflow-hidden flex justify-center items-center">
+            <Image imgSrc={banner5} className="object-fill w-full h-full" />
           </div>
         </Link>
+
+        {/* Banner 3 */}
         <Link to="/offer">
-          <div>
-            <Image imgSrc={bannerImgThree} />
+          <div className="w-full h-[500px] overflow-hidden flex justify-center items-center">
+            <Image imgSrc={banner3} className="object-fill w-full h-full" />
           </div>
         </Link>
       </Slider>
