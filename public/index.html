@@ -2,43 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Favicon -->
     <link rel="icon" href="%PUBLIC_URL%/smallLogo.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/smallLogo.ico" />
+
+    <!-- Viewport for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+
+    <!-- Primary Meta Tags -->
+    <title>OREBI Shopping | Experience the Better</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Shop the best deals on fashion, electronics, and more at OREBI Shopping. Discover exclusive offers, fast shipping, and a seamless shopping experience."
     />
-    <meta name="google-adsense-account" content="ca-pub-6542623777003381" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/smallLogo.ico" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="keywords"
+      content="ecommerce, online shopping, fashion, electronics, deals, OREBI, shopping, offers"
+    />
+    <meta name="author" content="OREBI Shopping" />
+    <meta name="robots" content="index, follow" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>OREBI Shopping | Experience the better</title>
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://orebishopping.reactbd.com/" />
+    <meta
+      property="og:title"
+      content="OREBI Shopping | Experience the Better"
+    />
+    <meta
+      property="og:description"
+      content="Explore a wide range of products at OREBI Shopping. Enjoy exclusive offers, secure payments, and fast delivery."
+    />
+    <meta
+      property="og:image"
+      content="https://orebishopping.reactbd.com/assets/og-image.jpg"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://orebishopping.reactbd.com/" />
+    <meta
+      name="twitter:title"
+      content="OREBI Shopping | Experience the Better"
+    />
+    <meta
+      name="twitter:description"
+      content="Shop top-quality products with great deals at OREBI Shopping. Fast, secure, and reliable."
+    />
+    <meta
+      name="twitter:image"
+      content="https://orebishopping.reactbd.com/assets/og-image.jpg"
+    />
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-6542623777003381" />
+
+    <!-- Canonical URL to prevent duplicate content -->
+    <link rel="canonical" href="https://orebishopping.reactbd.com/" />
+
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Additional SEO for Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "OREBI Shopping",
+        "url": "https://orebishopping.reactbd.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://orebishopping.reactbd.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
