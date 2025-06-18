@@ -25,7 +25,6 @@ const HeaderBottom = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [showSearchBar, setShowSearchBar] = useState(false);
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
@@ -105,9 +104,7 @@ const HeaderBottom = () => {
                               item: item,
                             },
                           }
-                        ) &
-                        setShowSearchBar(true) &
-                        setSearchQuery("")
+                        ) & setSearchQuery("")
                       }
                       key={item._id}
                       className="max-w-[600px] h-28 bg-gray-100 mb-3 flex items-center gap-3"
